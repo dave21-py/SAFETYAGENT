@@ -1,0 +1,7 @@
+langchain
+langchain-openai
+langgraph
+pandas
+firecrawl-py
+matplotlib
+seaborn
