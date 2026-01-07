@@ -7,3 +7,7 @@ venv/
 # Temporary Agent output (We only want to commit the final paper_results)
 data_storage/*
 !data_storage/.gitkeep
+
+data/harmful_behaviors_massive.csv
+generate_massive_dataset.py
+data_storage/experiment_results.csv
