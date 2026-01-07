@@ -5,3 +5,4 @@ pandas
 firecrawl-py
 matplotlib
 seaborn
+huggingface_hub

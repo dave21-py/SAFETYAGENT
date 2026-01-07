@@ -1,2 +1,9 @@
 .env
+__pycache__/
+*.pyc
 venv/
+.DS_Store
+
+# Temporary Agent output (We only want to commit the final paper_results)
+data_storage/*
+!data_storage/.gitkeep
