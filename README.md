@@ -111,7 +111,7 @@ If you use SafeAgent in your research, please cite:
 
 ```bibtex
 @article{SafeAgent2026,
-  title   = {SafeAgent: A Human-in-the-Loop Multi-Agent Framework for Autonomous AI Red Teaming},
+  title   = {Automation of Adversarial red teaming throuh LLM based multi-agent systems: approach to accelerating discovery, and optimization},
   author  = {David Geddam},
   journal = {Workshop Submission},
   year    = {2026}
