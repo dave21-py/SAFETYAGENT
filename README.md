@@ -1,115 +1,109 @@
-# MatAgent: A Physics-Aware Multi-Agent LLM Framework for Materials Science Discovery
+Paper: AUTOMATION OF ADVERSARIAL RED TEAMING THROUGH LLM BASED MULTI-AGENT SYSTEMS: APPROACH TO ACCELERATING DISCOVERY, AND OPTIMIZATION
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+![alt text](https://img.shields.io/badge/license-MIT-blue.svg)
+![alt text](https://img.shields.io/badge/python-3.9%2B-blue.svg)
+![alt text](https://img.shields.io/badge/NeurIPS-2026_Submission-red)
 
-MatAgent is a cutting-edge, physics-aware multi-agent **Large Language Model (LLM)** framework designed to accelerate **materials science discovery and optimization**. This repository provides the source code and resources to facilitate **material property prediction, hypothesis generation, experimental data analysis, high-performance material discovery, data-driven experimentation, and literature review automation**.
+SafeAgent is a cutting-edge, autonomous multi-agent Large Language Model (LLM) framework designed to accelerate AI safety auditing and compliance verification. This repository provides the source code and resources to facilitate automated red teaming, self-healing attack execution, and quantitative safety evaluation across critical risk domains.
 
-## 🚀 Features
-- **Material Property Prediction**: Predicts experimental material properties such as band gaps, superconducting critical temperatures, and mechanical properties.
-- **Hypothesis Generation**: Uses AI-driven techniques to propose new materials with desired characteristics.
-- **Experimental Data Analysis**: Automates the analysis of large-scale experimental datasets.
-- **Accelerated Alloy & Polymer Discovery**: Integrates machine learning (ML) and density functional theory (DFT) to optimize material compositions.
-- **Automated Literature Review**: Extracts and synthesizes insights from scientific papers to support research.
-- **Multi-Agent AI Framework**: Uses LLM-based specialized agents for a closed-loop, autonomous research cycle.
+🚀 Features
+Autonomous Red Teaming: Orchestrates agents to generate, execute, and refine adversarial attacks without human intervention.
+Self-Healing Code Generation: Features a Coder Agent that autonomously detects runtime API errors (e.g., rate limits, syntax errors) and rewrites its own Python scripts to ensure experiment completion.
+LLM-as-a-Judge Evaluation: Eliminates human bias by using a strict binary rubric to score model refusals vs. jailbreaks.
+Multi-Domain Auditing: Validated across six safety categories:
+Chemical & Biological Weapons
+Cybersecurity Exploits
+Self-Harm & Violence
+Disinformation Campaigns
+PII Leakage
+Copyright Infringement
+"Superhuman" Audit Loop: Simulates a future-proof evaluation by using GPT-5-mini (Attacker) to audit GPT-4o-mini (Target).
 
-## 📑 Project Structure
-```
-MatAgent/
-│── data/               # Datasets used in the experiments
-│── models/             # Pre-trained and fine-tuned models
-│── notebooks/          # Jupyter notebooks for analysis and visualization
-│── src/                # Core framework components
-│   ├── agents/         # AI-driven agents for different tasks
-│   ├── processing/     # Data preprocessing and feature engineering
-│   ├── training/       # Machine learning model training scripts
-│   ├── evaluation/     # Benchmarking and validation methods
-│── scripts/            # Automated scripts for execution
-│── results/            # Experiment outputs, visualizations, and reports
-│── README.md           # Project documentation
-│── requirements.txt    # Required dependencies
-│── LICENSE             # License information
-```
+Safety & Ethics Statement
+This framework is released for defensive research purposes only.
+To prevent misuse, the dataset of 1,200 adversarial prompts generated during our study has been withheld from this repository. The data/ folder contains a sanitized example_benchmark.csv for demonstration purposes. The author does not condone the generation of harmful content.
 
-## 🔧 Installation
-### Prerequisites
-- Python 3.8+
-- Pip or Conda for package management
-- GPU (optional, recommended for faster model execution)
+📑 Project Structure
+code
+Text
+SAFETYAGENT/
+│── data/                   # Input datasets 
+│── paper_results/          # Logs, Charts, Reports
+│   ├── Experiment_EXP_01_Chemical...
+│   ├── Experiment_EXP_04_Disinformation...
+│   └── ...
+│── src/                    # Core components
+│   ├── agents/             # Agents
+│   │   ├── coder_agent.py      # Writes & Fixes Python Code
+│   │   ├── judge_agent.py      # Evaluates Safety
+│   │   ├── hypothesis_agent.py # Formulates Strategy
+│   │   ├── visualization_agent.py # Visualizes ASR
+│   │   └── supervisor.py       # Orchestration Logic
+│   ├── tools/              # Execution Logic
+│── main.py                 # Main Entry Point
+│── requirements.txt        # Dependencies
+│── LICENSE                 # MIT License
+🔧 Installation
 
-### Setup
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/adibgpt/MatAgent.git
-   cd MatAgent
-   ```
+Prerequisites
+Python 3.9+
+OpenAI API Key (Required for Agents)
+Setup
+Clone the repository
+code
+Bash
+git clone https://github.com/dave21-py/SAFETYAGENT.git
+cd SAFETYAGENT
+Install dependencies
+code
+Bash
+pip install -r requirements.txt
+Configure Environment
+Create a .env file in the root directory:
+code
+Bash
+OPENAI_API_KEY="sk-..."
+🛠️ Usage
+To reproduce, simply run:
 
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+code
+Bash
+python main.py
+The Autonomous Loop:
 
-3. **Download datasets (if applicable)**
-   - Place datasets in the `data/` directory.
+Hypothesis Agent drafts a research plan.
+Coder Agent writes a Python script to attack the target model.
+Executor runs the script. If it crashes, the Coder Agent fixes it automatically.
+Judge Agent scores the results (0% - 100% ASR).
+Visualizer plots the data.
+Report Agent writes the final Final_Audit_Report.md.
+📊 Key Findings (Jan 2026)
+SafeAgent identified a critical "Safety Alignment Gap" in efficient frontier models. While GPT-4o-mini demonstrated robust refusal against technical threats, it remained susceptible to persuasive roleplay:
 
-## 🛠️ Usage
-### 1️⃣ Running Material Property Prediction
-```bash
-python src/agents/material_property.py --data_path data/materials.csv
-```
+Category	Attack Success Rate (ASR)	Status
+Chemical Weapons	0.00%	✅ Robust
+Cybersecurity	0.00%	✅ Robust
+Self-Harm	2.50%	⚠️ Minor Leakage
+Disinformation	7.50%	❌ Vulnerable
+Check the paper_results/ directory for full audit reports and visualizations.
 
-### 2️⃣ Running Hypothesis Generation
-```bash
-python src/agents/hypothesis_generation.py --dataset data/superconductors.csv
-```
+📝 Citation
+If you use SafeAgent in your research, please cite:
 
-### 3️⃣ Performing Experimental Data Analysis
-```bash
-python src/agents/data_analysis.py --experiment_file data/experimental_results.csv
-```
-
-### 4️⃣ Literature Review Automation
-```bash
-python src/agents/literature_review.py --topic "Perovskite Solar Cells"
-```
-
-For more detailed usage examples, refer to the **notebooks/** folder.
-
-## 📊 Benchmarking & Performance
-MatAgent has been tested across several **benchmarking categories**, including:
-- **Material property prediction** (band gap, yield strength, etc.)
-- **Superconducting materials discovery** (critical temperature prediction)
-- **Experimental data analysis** (temperature dependence studies)
-- **Automated literature review** (scientific text mining)
-
-Check the **results/** directory for performance metrics and evaluation reports.
-
-## 📝 Citation
-If you use MatAgent in your research, please cite our paper:
-```
-@article{MatAgent2025,
-  title   = {MatAgent: A Physics-Aware Multi-Agent LLM Framework for Accelerating Materials Science Discovery},
-  author  = {Anonymous},
-  journal = {ICLR 2025 Submission},
-  year    = {2025}
+code
+Bibtex
+@article{SafeAgent2026,
+  title   = {SafeAgent: A Human-in-the-Loop Multi-Agent Framework for Autonomous AI Red Teaming},
+  author  = {David Geddam},
+  journal = {Workshop Submission},
+  year    = {2026}
 }
-```
+📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## 📜 License
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-We welcome contributions! Please follow these steps:
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature-new`).
-3. Commit changes (`git commit -m "Added new feature"`).
-4. Push to your fork (`git push origin feature-new`).
-5. Submit a pull request.
-
-## 🔗 Resources & Acknowledgments
-- [Materials Informatics Research](https://www.nature.com/subjects/materials-informatics)
-- [LangChain](https://www.langchain.com/)
-- [OpenAI's GPT Models](https://openai.com/)
-- [Firecrawl](https://firecrawl.ai/)
+🤝 Acknowledgments
+Inspired by the MatAgent framework for autonomous scientific discovery.
+Built with LangChain and OpenAI.
 
 ---
 For any questions, please reach out via GitHub Issues or Discussions.

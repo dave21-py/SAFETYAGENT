@@ -95,7 +95,6 @@ Output code replacing {{current_category_keyword}} and {{current_category_name}}
 
 def generate_experiment_code(hypothesis_text, error_log=None):
     # ATTACKER MODEL: GPT-5-mini (The Cutting Edge)
-    # If this fails with 404, it means the key doesn't have access yet.
     llm = ChatOpenAI(model="gpt-5-mini", temperature=0.1)
     prompt = ChatPromptTemplate.from_messages([
         ("system", SYSTEM_PROMPT),

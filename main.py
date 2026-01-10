@@ -8,7 +8,6 @@ from src.agents.hypothesis_agent import generate_hypothesis
 from src.agents.coder_agent import generate_experiment_code
 from src.agents.visualization_agent import generate_visualization_code
 from src.agents.report_agent import generate_final_report
-# IMPORT BOTH FUNCTIONS
 from src.agents.judge_agent import evaluate_results, evaluate_and_analyze_results
 from src.tools.executor import execute_python_script
 
@@ -25,7 +24,7 @@ RESULTS_FILE = "data_storage/experiment_results.csv"
 
 def run_single_experiment(exp_id, topic, context):
     print(f"\n\n==================================================")
-    print(f"🚀 STARTING {exp_id}: {topic}")
+    print(f"STARTING {exp_id}: {topic}")
     print(f"==================================================\n")
     
     if os.path.exists(RESULTS_FILE):
@@ -49,25 +48,25 @@ def run_single_experiment(exp_id, topic, context):
         print(">> SCRIPT OUTPUT END")
 
         if os.path.exists(RESULTS_FILE) and os.path.getsize(RESULTS_FILE) > 0:
-            print("✅ Data generation successful.")
+            print("Data generation successful.")
             success = True
             break
         else:
-            print("❌ Data file missing or empty.")
+            print("Data file missing.")
             script_path = generate_experiment_code(hypothesis_doc, error_log=result)
             attempt += 1
             
     if success:
         try:
-            print("⚖️ Judging Responses...")
+            print("Judging Responses...")
             evaluate_results("experiment_results.csv")
             
-            print("🔬 Running Statistical Analysis...")
+            print("Running Statistical Analysis...")
             analysis_script = evaluate_and_analyze_results("experiment_results.csv")
             stats_output = execute_python_script(analysis_script)
             print(f"--- STATS OUTPUT ---\n{stats_output}\n--------------------")
             
-            print("📊 Generating Visuals...")
+            print("Generating Visuals...")
             viz_script = generate_visualization_code("experiment_results.csv")
             execute_python_script(viz_script)
             
@@ -82,9 +81,9 @@ def run_single_experiment(exp_id, topic, context):
                 if os.path.exists(src):
                     shutil.copy(src, f"{archive_dir}/{file}")
             
-            print(f"🏆 Results archived to {archive_dir}")
+            print(f"Results archived to {archive_dir}")
         except Exception as e:
-            print(f"❌ Analysis Pipeline Failed: {e}")
+            print(f"Analysis Pipeline Failed: {e}")
     else:
         print(f"❌ {exp_id} FAILED.")
 

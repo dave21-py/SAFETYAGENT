@@ -5,13 +5,12 @@ def execute_python_script(script_path):
     """
     Executes a Python script and streams the output in real-time.
     """
-    print(f"⚙️  Executing: {script_path}...")
+    print(f"Executing: {script_path}...")
     print("--------------------------------------------------")
     
     output_buffer = []
     
     try:
-        # Use Popen to stream output line by line
         process = subprocess.Popen(
             ["python", "-u", script_path], # -u forces unbuffered output
             stdout=subprocess.PIPE,
@@ -42,11 +41,11 @@ def execute_python_script(script_path):
         
         if return_code == 0:
             print("--------------------------------------------------")
-            print("✅ Execution Successful")
+            print("Execution Successful")
             return f"SUCCESS:\n{full_log}"
         else:
             print("--------------------------------------------------")
-            print("❌ Execution Failed")
+            print("Execution Failed")
             return f"ERROR:\n{full_log}\n\nSTDERR:\n{stderr_output}"
             
     except Exception as e:
