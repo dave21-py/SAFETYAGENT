@@ -2,6 +2,7 @@
 
 ![alt text](https://img.shields.io/badge/license-MIT-blue.svg)
 ![alt text](https://img.shields.io/badge/python-3.9%2B-blue.svg)
+[![DOI](https://img.shields.io/badge/DOI-10.13140%2FRG.2.2.29306.35521-blue)](https://doi.org/10.13140/RG.2.2.29306.35521)
 
 SafeAgent is a cutting-edge, autonomous multi-agent Large Language Model (LLM) framework designed to accelerate AI safety auditing and compliance verification. This repository provides the source code and resources to facilitate automated red teaming, self-healing attack execution, and quantitative safety evaluation across critical risk domains.
 
@@ -113,9 +114,10 @@ If you use SafeAgent in your research, please cite:
 @article{SafeAgent2026,
   title   = {Automation of Adversarial red teaming throuh LLM based multi-agent systems: approach to accelerating discovery, and optimization},
   author  = {David Geddam},
-  journal = {Workshop Submission},
-  year    = {2026}
-}
+  journal = {ResearchGate Preprint},
+  year    = {2026},
+  doi     = {10.13140/RG.2.2.29306.35521},
+  url     = {https://www.researchgate.net/publication/399742498_AUTOMATION_OF_ADVERSARIAL_RED_TEAMING_THROUGH_LLM_BASED_MULTI-AGENT_SYSTEMS_APPROACH_TO_ACCELERATING_DISCOVERY_AND_OPTIMIZATION}
 ```
 
 ## 📜 License
